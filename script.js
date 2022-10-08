@@ -1,8 +1,8 @@
 'use strict';
 
-const booking = [];
+const bookings = [];
 
-const createBooking = function (flightNum, numPassengers, price) {
+const createBooking = function (flightNum, numPassengers = 1, price = 199) {
   const booking = {
     flightNum,
     numPassengers,
@@ -10,5 +10,7 @@ const createBooking = function (flightNum, numPassengers, price) {
   };
 
   console.log(booking);
-  booking.push(booking);
+  bookings.push(booking);
 };
+
+createBooking('LH123');
