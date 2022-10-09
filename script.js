@@ -91,15 +91,35 @@
 
 // ['Jonas', 'Martha', 'Adam'].forEach(high5);
 
-const greet = function (greeting) {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
-  };
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+// const greeterHey = greet('Hey');
+// greeterHey('Josh');
+// greeterHey('Steven');
+// const greeterPotato = greet('Hey Potato');
+// greeterPotato('Josh');
+// greeterPotato('Steven');
+
+// greet('Hello')('Josh');
+
+// const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+// greetArr('Hi')('Josh');
+
+const lufthansa = {
+  airline: 'Lufthanse',
+  iataCode: 'LH',
+  bookings: [],
+  book: function (flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+  },
 };
 
-const greeterHey = greet('Hey');
-greeterHey('Josh');
-greeterHey('Steven');
-const greeterPotato = greet('Hey Potato');
-greeterPotato('Josh');
-greeterPotato('Steven');
+lufthansa.book(239, 'Joshua Li');
+lufthansa.book(239, 'John Smith');
