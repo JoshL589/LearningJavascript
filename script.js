@@ -63,7 +63,7 @@
 // higher order functions
 
 const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
+  return str.replaceAll(' ', '').toLowerCase();
 };
 
 const upperFirstWord = function (str) {
@@ -79,4 +79,14 @@ const transformer = function (str, fn) {
   console.log(`Transformed by: ${fn.name}`);
 };
 
-transformer('JavaSciprt is the best!', upperFirstWord);
+transformer('JavaScript is the best!', upperFirstWord);
+
+transformer('JavaSciprt is the best!', oneWord);
+
+const high5 = function () {
+  console.log('wave');
+};
+
+document.body.addEventListener('click', high5);
+
+['Jonas', 'Martha', 'Adam'].forEach(high5);
