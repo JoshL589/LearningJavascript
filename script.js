@@ -41,6 +41,21 @@ const checkIn = function (flightNum, passenger) {
   }
 };
 
+console.log(flight);
+console.log(josh);
+checkIn(flight, josh);
+console.log(flight);
+console.log(josh);
+
+// Is the same as doing...
+const flightNum = flight;
+const passenger = josh;
+
+const newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 1000000000000);
+};
+
+newPassport(josh);
 checkIn(flight, josh);
 console.log(flight);
 console.log(josh);
