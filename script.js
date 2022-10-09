@@ -118,8 +118,43 @@ const lufthansa = {
     console.log(
       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
     );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
   },
 };
 
 lufthansa.book(239, 'Joshua Li');
 lufthansa.book(239, 'John Smith');
+
+const eurowings = {
+  name: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// call method
+
+// book(23, 'Sarah Williams');
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 582, 'Mary Cooper');
+console.log(swiss);
+
+// apply method
+const flightData = [582, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+book.call(swiss, ...flightData);
+console.log(swiss);
