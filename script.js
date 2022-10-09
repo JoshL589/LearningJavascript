@@ -24,38 +24,59 @@
 
 // createBooking('LM123', undefined, 1000);
 
-const flight = 'LH234';
-const josh = {
-  name: 'Joshua Li',
-  passport: 2395823434,
+// const flight = 'LH234';
+// const josh = {
+//   name: 'Joshua Li',
+//   passport: 2395823434,
+// };
+
+// const checkIn = function (flightNum, passenger) {
+//   flightNum = 'Lh999';
+//   passenger.name = 'Mr. ' + passenger.name;
+
+//   if (passenger.passport === 2395823434) {
+//     alert('Checked in');
+//   } else {
+//     alert('Wrong passport!');
+//   }
+// };
+
+// console.log(flight);
+// console.log(josh);
+// checkIn(flight, josh);
+// console.log(flight);
+// console.log(josh);
+
+// // Is the same as doing...
+// const flightNum = flight;
+// const passenger = josh;
+
+// const newPassport = function (person) {
+//   person.passport = Math.trunc(Math.random() * 1000000000000);
+// };
+
+// newPassport(josh);
+// checkIn(flight, josh);
+// console.log(flight);
+// console.log(josh);
+
+// higher order functions
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
 };
 
-const checkIn = function (flightNum, passenger) {
-  flightNum = 'Lh999';
-  passenger.name = 'Mr. ' + passenger.name;
-
-  if (passenger.passport === 2395823434) {
-    alert('Checked in');
-  } else {
-    alert('Wrong passport!');
-  }
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
 };
 
-console.log(flight);
-console.log(josh);
-checkIn(flight, josh);
-console.log(flight);
-console.log(josh);
+// higher-order function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
 
-// Is the same as doing...
-const flightNum = flight;
-const passenger = josh;
-
-const newPassport = function (person) {
-  person.passport = Math.trunc(Math.random() * 1000000000000);
+  console.log(`Transformed by: ${fn.name}`);
 };
 
-newPassport(josh);
-checkIn(flight, josh);
-console.log(flight);
-console.log(josh);
+transformer('JavaSciprt is the best!', upperFirstWord);
